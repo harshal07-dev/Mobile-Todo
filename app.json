@@ -1,12 +1,17 @@
 {
   "expo": {
-    "name": "todo-app",
-    "slug": "todo-app",
+    "name": "My Todos",
+    "slug": "my-todos-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "todoapp",
     "userInterfaceStyle": "automatic",
+    "description": "A beautiful and functional todo app with modern UI and smooth animations",
+    "privacy": "public",
+    "platforms": [
+      "android"
+    ],
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
@@ -14,9 +19,12 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#4F46E5"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.mycompany.mytodos",
+      "versionCode": 1,
+      "permissions": []
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +45,12 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "f92a0bc3-352f-4362-9399-9146efbf7300"
+      }
     }
   }
 }

@@ -1,50 +1,102 @@
-# Welcome to your Expo app 👋
+# Todo App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A beautiful and functional todo application built with React Native and Expo.
 
-## Get started
+## Features
 
-1. Install dependencies
+- ✅ **Add, Edit, Delete Todos** - Full CRUD functionality
+- 🔍 **Search & Filter** - Find todos quickly with search and filter by status
+- 💾 **Persistent Storage** - Uses AsyncStorage to keep your todos between app sessions
+- 🎨 **Modern UI** - Clean, intuitive design with smooth animations
+- 📱 **Android Optimized** - Built specifically for Android with native performance
+- 🚀 **No Authentication Required** - Simple and easy to use
 
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or later)
+- npm or yarn
+- Expo CLI
+- Android Studio or physical Android device
+
+### Installation
+
+1. Clone the repository
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. Start the development server:
    ```bash
-   npx expo start
+   npm start
    ```
 
-In the output, you'll find options to open the app in a
+4. Run on Android:
+   ```bash
+   npm run android
+   ```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Usage
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Basic Operations
 
-## Get a fresh project
+- **Add Todo**: Tap the input field at the top, type your todo, and press the plus button
+- **Complete Todo**: Tap the circle checkbox next to any todo
+- **Edit Todo**: Tap on the todo text to edit it inline
+- **Delete Todo**: Tap the trash icon (confirms before deleting)
 
-When you're ready, run:
+### Advanced Features
 
-```bash
-npm run reset-project
+- **Search**: Use the search bar to find specific todos
+- **Filter**: Switch between All, Active, and Completed todos
+- **Clear Completed**: Remove all completed todos at once
+- **Pull to Refresh**: Pull down on the list to refresh
+
+## Architecture
+
+- **Types**: TypeScript interfaces for type safety
+- **Storage**: AsyncStorage for persistent local data
+- **Hooks**: Custom React hooks for state management
+- **Components**: Modular, reusable UI components
+- **Styling**: React Native StyleSheet with modern design principles
+
+## File Structure
+
+```
+todo-app/
+├── app/                    # Main app screens
+│   ├── _layout.tsx        # Root layout
+│   └── index.tsx          # Main todo screen
+├── components/            # Reusable UI components
+│   ├── AddTodoInput.tsx   # Todo input component
+│   ├── SearchBar.tsx      # Search functionality
+│   ├── TodoFilters.tsx    # Filter buttons
+│   ├── TodoItem.tsx       # Individual todo item
+│   └── EmptyState.tsx     # Empty state display
+├── hooks/                 # Custom React hooks
+│   └── useTodos.ts        # Todo state management
+├── types/                 # TypeScript type definitions
+│   └── Todo.ts            # Todo interface
+├── utils/                 # Utility functions
+│   └── todoStorage.ts     # AsyncStorage wrapper
+└── assets/                # Images and fonts
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Technical Details
 
-## Learn more
+- **Framework**: React Native with Expo
+- **Language**: TypeScript
+- **Storage**: AsyncStorage
+- **Icons**: Expo Vector Icons (Ionicons)
+- **Navigation**: Expo Router
+- **State Management**: React Hooks
 
-To learn more about developing your project with Expo, look at the following resources:
+## Contributing
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Feel free to submit issues and enhancement requests!
 
-## Join the community
+## License
 
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project is open source and available under the [MIT License](LICENSE).
