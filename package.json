@@ -1,5 +1,5 @@
 {
-  "name": "todo-app-task-manager",
+  "name": "todo-app",
   "main": "expo-router/entry",
   "version": "1.0.0",
   "description": "A beautiful and functional todo app with modern UI and smooth animations. Organize your tasks efficiently with our intuitive task management app.",

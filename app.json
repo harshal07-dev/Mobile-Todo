@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Todo App - Task Manager",
-    "slug": "todo-app-task-manager",
+    "slug": "my-todos-app",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -53,7 +53,7 @@
         "projectId": "f92a0bc3-352f-4362-9399-9146efbf7300"
       }
     },
-    "owner": "harshal07-dev",
+    "owner": "harshal07",
     "keywords": [
       "todo",
       "task manager",
