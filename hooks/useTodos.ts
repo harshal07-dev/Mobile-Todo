@@ -5,7 +5,6 @@ import { todoStorage } from '../utils/todoStorage';
 export const useTodos = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [filter, setFilter] = useState<TodoFilter['type']>('all');
-  const [searchQuery, setSearchQuery] = useState('');
   const [loading, setLoading] = useState(true);
   const [newTodoId, setNewTodoId] = useState<string | null>(null);
 
@@ -83,16 +82,11 @@ export const useTodos = () => {
     }
   }, []);
 
-  // Filter and search todos
+  // Filter todos
   const filteredTodos = todos.filter(todo => {
     // Apply filter
     if (filter === 'active' && todo.completed) return false;
     if (filter === 'completed' && !todo.completed) return false;
-    
-    // Apply search
-    if (searchQuery.trim()) {
-      return todo.text.toLowerCase().includes(searchQuery.toLowerCase());
-    }
     
     return true;
   });
@@ -108,8 +102,6 @@ export const useTodos = () => {
     allTodos: todos,
     filter,
     setFilter,
-    searchQuery,
-    setSearchQuery,
     loading,
     stats,
     newTodoId,

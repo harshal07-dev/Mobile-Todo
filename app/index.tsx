@@ -1,18 +1,17 @@
-import { Ionicons } from '@expo/vector-icons';
-import { router } from 'expo-router';
 import React from 'react';
 import {
-    FlatList,
-    RefreshControl,
-    SafeAreaView,
-    StatusBar,
-    StyleSheet,
-    Text,
-    TouchableOpacity,
-    View,
+  FlatList,
+  RefreshControl,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import { AddTodoInput } from '../components/AddTodoInput';
-import { SearchBar } from '../components/SearchBar';
 import { TodoFilters } from '../components/TodoFilters';
 import { TodoItem } from '../components/TodoItem';
 import { useTodos } from '../hooks/useTodos';
@@ -22,8 +21,6 @@ export default function TodoApp() {
     todos,
     filter,
     setFilter,
-    searchQuery,
-    setSearchQuery,
     loading,
     stats,
     newTodoId,
@@ -48,12 +45,10 @@ export default function TodoApp() {
   const renderEmptyState = () => (
     <View style={styles.emptyContainer}>
       <Text style={styles.emptyTitle}>
-        {searchQuery ? 'No todos found' : 'No todos yet'}
+        No todos yet
       </Text>
       <Text style={styles.emptySubtitle}>
-        {searchQuery
-          ? 'Try adjusting your search'
-          : 'Add your first todo to get started!'}
+        Add your first todo to get started!
       </Text>
     </View>
   );
@@ -75,18 +70,12 @@ export default function TodoApp() {
       <AddTodoInput onAddTodo={addTodo} />
       
       {stats.total > 0 && (
-        <>
-          <SearchBar
-            searchQuery={searchQuery}
-            onSearchChange={setSearchQuery}
-          />
-          <TodoFilters
-            currentFilter={filter}
-            onFilterChange={setFilter}
-            stats={stats}
-            onClearCompleted={clearCompleted}
-          />
-        </>
+        <TodoFilters
+          currentFilter={filter}
+          onFilterChange={setFilter}
+          stats={stats}
+          onClearCompleted={clearCompleted}
+        />
       )}
     </View>
   );
