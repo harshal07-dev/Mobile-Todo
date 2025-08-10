@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "My Todos",
-    "slug": "my-todos-app",
+    "name": "Todo App - Task Manager",
+    "slug": "todo-app-task-manager",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "todoapp",
     "userInterfaceStyle": "automatic",
-    "description": "A beautiful and functional todo app with modern UI and smooth animations",
+    "description": "A beautiful and functional todo app with modern UI and smooth animations. Organize your tasks efficiently with our intuitive task management app.",
     "privacy": "public",
     "platforms": [
       "android"
@@ -22,9 +22,10 @@
         "backgroundColor": "#4F46E5"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.mycompany.mytodos",
+      "package": "com.harshal07dev.todoapp",
       "versionCode": 1,
-      "permissions": []
+      "permissions": [],
+      "playStoreUrl": "https://play.google.com/store/apps/details?id=com.harshal07dev.todoapp"
     },
     "web": {
       "bundler": "metro",
@@ -51,6 +52,20 @@
       "eas": {
         "projectId": "f92a0bc3-352f-4362-9399-9146efbf7300"
       }
-    }
+    },
+    "owner": "harshal07-dev",
+    "keywords": [
+      "todo",
+      "task manager",
+      "productivity",
+      "organizer",
+      "tasks",
+      "reminders",
+      "android"
+    ],
+    "categories": [
+      "productivity",
+      "utilities"
+    ]
   }
 }

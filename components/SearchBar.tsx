@@ -30,6 +30,10 @@ export const SearchBar: React.FC<SearchBarProps> = ({
         placeholder="Search todos..."
         placeholderTextColor="#999"
         returnKeyType="search"
+        blurOnSubmit={false}
+        autoCorrect={false}
+        autoCapitalize="none"
+        clearButtonMode="never"
       />
       {searchQuery.length > 0 && (
         <TouchableOpacity onPress={handleClear} style={styles.clearButton}>

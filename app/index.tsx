@@ -1,12 +1,15 @@
+import { Ionicons } from '@expo/vector-icons';
+import { router } from 'expo-router';
 import React from 'react';
 import {
-  FlatList,
-  RefreshControl,
-  SafeAreaView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  View,
+    FlatList,
+    RefreshControl,
+    SafeAreaView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    TouchableOpacity,
+    View,
 } from 'react-native';
 import { AddTodoInput } from '../components/AddTodoInput';
 import { SearchBar } from '../components/SearchBar';
@@ -58,7 +61,15 @@ export default function TodoApp() {
   const ListHeaderComponent = () => (
     <View>
       <View style={styles.header}>
-        <Text style={styles.subtitle}>Stay organized and productive</Text>
+        <View style={styles.headerContent}>
+          <Text style={styles.subtitle}>Stay organized and productive</Text>
+          <TouchableOpacity
+            style={styles.settingsButton}
+            onPress={() => router.push('/settings' as any)}
+          >
+            <Ionicons name="settings-outline" size={24} color="#4A5568" />
+          </TouchableOpacity>
+        </View>
       </View>
       
       <AddTodoInput onAddTodo={addTodo} />
@@ -80,6 +91,12 @@ export default function TodoApp() {
     </View>
   );
 
+  const ListFooterComponent = () => (
+    <View style={styles.footer}>
+      <Text style={styles.footerText}>Created by Harshal</Text>
+    </View>
+  );
+
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#F8F9FA" />
@@ -90,6 +107,7 @@ export default function TodoApp() {
         keyExtractor={(item) => item.id}
         ListHeaderComponent={ListHeaderComponent}
         ListEmptyComponent={renderEmptyState}
+        ListFooterComponent={ListFooterComponent}
         showsVerticalScrollIndicator={false}
         refreshControl={
           <RefreshControl refreshing={loading} onRefresh={refreshTodos} />
@@ -118,6 +136,16 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     paddingTop: 49,
     paddingBottom: 20,
+  },
+  headerContent: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  settingsButton: {
+    padding: 8,
+    borderRadius: 8,
+    backgroundColor: '#F1F5F9',
   },
   title: {
     fontSize: 36,
@@ -151,5 +179,15 @@ const styles = StyleSheet.create({
     color: '#999',
     textAlign: 'center',
     lineHeight: 24,
+  },
+  footer: {
+    alignItems: 'center',
+    paddingVertical: 20,
+    paddingHorizontal: 16,
+  },
+  footerText: {
+    fontSize: 12,
+    color: '#9CA3AF',
+    fontWeight: '500',
   },
 });
